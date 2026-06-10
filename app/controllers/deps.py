@@ -11,7 +11,10 @@ from jose import JWTError, jwt
 from app.config import get_settings
 
 settings = get_settings()
-bearer_scheme = HTTPBearer()
+bearer_scheme = HTTPBearer(
+    scheme_name="BearerAuth",
+    description="Pega aquí el token JWT con formato: Bearer <token>"
+)
 
 
 @dataclass
