@@ -4,7 +4,6 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.openapi.utils import get_openapi
 
 from app.config import get_settings
-from app.database import init_db
 from app.controllers.practica_controller import router as practica_router
 
 settings = get_settings()
@@ -44,7 +43,7 @@ TAGS_METADATA = [
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    await init_db()
+    # El esquema de la BD lo gestiona Alembic (entrypoint.sh -> alembic upgrade head), no create_all.
     yield
 
 
