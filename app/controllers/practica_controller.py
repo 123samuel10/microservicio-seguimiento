@@ -30,7 +30,7 @@ router = APIRouter(prefix="/practicas", tags=["Seguimiento de Prácticas"])
 
 # ── Práctica ──────────────────────────────────────────────────────────────────
 
-@router.post("/", response_model=PracticaResponse, status_code=status.HTTP_201_CREATED)
+@router.post("", response_model=PracticaResponse, status_code=status.HTTP_201_CREATED)
 async def crear_practica(
     datos: PracticaCreate,
     db: AsyncSession = Depends(get_db),
