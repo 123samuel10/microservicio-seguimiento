@@ -3,6 +3,7 @@ name: seguimiento-cd-pipeline
 on:
   push:
     branches: [main]
+  workflow_dispatch:  # Habilita ejecución manual desde GitHub UI
 
 jobs:
   cd:
