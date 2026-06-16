@@ -55,6 +55,7 @@ app = FastAPI(
     docs_url="/docs",
     redoc_url="/redoc",
     lifespan=lifespan,
+    root_path="/seguimiento_practicas",
 )
 
 app.add_middleware(
